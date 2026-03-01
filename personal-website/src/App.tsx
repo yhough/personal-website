@@ -1,40 +1,43 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 
+type SkillItem = { name: string; icon?: string; img?: string }
+
 const TITLE = "hi! i'm yaelin hough :)"
 const NAV_LINKS = ["about", "experience", "projects", "skills"]
 
-const SKILLS = [
+const SKILLS: { category: string; items: SkillItem[] }[] = [
   {
     category: "Languages",
     items: [
-      { name: "Java",       img: "/java_logo.png" },
-      { name: "OCaml",      img: "/ocaml_logo.png" },
-      { name: "C#",         img: "/c_sharp_logo.png" },
-      { name: "TypeScript", icon: "devicon-typescript-original colored" },
-      { name: "JavaScript", img: "/javascript_logo.png" },
-      { name: "Python",     img: "/python_logo.png" },
-      { name: "Swift",      img: "/swift_logo.png" },
+      { name: "Java",       img: "/logos/java.svg" },
+      { name: "OCaml",      img: "/logos/ocaml.svg" },
+      { name: "C#",         img: "/logos/csharp.svg" },
+      { name: "JavaScript", img: "/logos/javascript.svg" },
+      { name: "Python",     img: "/logos/python.svg" },
+      { name: "Swift",      img: "/logos/swift.svg" },
     ]
   },
   {
     category: "Frameworks",
     items: [
-      { name: "Unity",     img: "/unity_logo.png" },
-      { name: "React",     icon: "devicon-react-original colored" },
-      { name: "SwiftUI",   img: "/swiftui_logo.png" },
-      { name: "Node.js",   img: "/node_js.png" },
-      { name: "Bootstrap", img: "/bootstrap_logo.png" },
+      { name: "Unity",      img: "/logos/unity.svg" },
+      { name: "React",      img: "/logos/react.svg" },
+      { name: "SwiftUI",    img: "/logos/swiftui.svg" },
+      { name: "Node.js",    img: "/logos/nodejs.svg" },
+      { name: "Bootstrap",  img: "/logos/bootstrap.svg" },
+      { name: "Tailwind",   img: "/logos/tailwindcss.svg" },
     ]
   },
   {
     category: "Tools",
     items: [
-      { name: "Firebase", img: "/firebase_logo.png" },
-      { name: "Git",      img: "/git_logo.png" },
-      { name: "HTML",     img: "/html_logo.png" },
-      { name: "CSS",      img: "/css_logo.png" },
-      { name: "Figma",    img: "/figma_logo.png" },
+      { name: "Firebase",      img: "/logos/firebase.svg" },
+      { name: "Git",           img: "/logos/git.svg" },
+      { name: "HTML",          img: "/logos/html5.svg" },
+      { name: "CSS",           img: "/logos/css.svg" },
+      { name: "Figma",         img: "/logos/figma.svg" },
+      { name: "Framer Motion", img: "/logos/framermotion.svg" },
     ]
   }
 ]
@@ -89,7 +92,7 @@ const EXPERIENCES = [
     org: "Cornell WebDev",
     period: "Oct. 2025 – Present",
     role: "Frontend Developer",
-    logo: "/webdev_logo.png",
+    logo: "/logos/webdev_logo.png",
     description: "Designing and developing custom websites for Cornell organizations. Creating responsive UI mockups in Figma and implementing accessible, maintainable frontend components using HTML, CSS, and JavaScript.",
     skills: ["HTML", "CSS", "JavaScript", "Responsive Design", "Figma", "Accessibility (WCAG)", "UI/UX", "Frontend Architecture", "Node"]
   },
@@ -97,7 +100,7 @@ const EXPERIENCES = [
     org: "Cornell XR",
     period: "Sept. 2025 – Present",
     role: "Software Subteam Member",
-    logo: "/CUXR_logo.png",
+    logo: "/logos/CUXR_logo.png",
     description: "Developed multi-user VR features for architectural model review, including annotations, lighting controls, scaling tools, and real-time communication systems. Currently building custom Unity environments to integrate with an external olfactory device, expanding immersion beyond visual and spatial interaction. Across all features, we prioritize accessibility, usability, and inclusive design to ensure collaborative XR tools are intuitive and widely usable.",
     skills: ["Unity", "C#", "XR Interaction Toolkit", "VR UI/UX Design", "Accessibility Design"]
   },
@@ -105,7 +108,7 @@ const EXPERIENCES = [
     org: "Fendodo",
     period: "June 2024 – Oct. 2025",
     role: "Private Tutor (SAT, SSAT, AP Literature)",
-    logo: "/fendodo_logo.svg",
+    logo: "/logos/fendodo_logo.svg",
     description: "Provided individualized instruction in standardized test preparation and AP English Literature, focusing on analytical writing, reading comprehension, and test strategy. Helped students build confidence, structure arguments clearly, and improve measurable score outcomes.",
     skills: ["Curriculum Design", "Communication", "Critical Thinking", "Standardized Test Strategy", "Mentorship"]
   }
