@@ -4,6 +4,41 @@ import './App.css'
 const TITLE = "hi! i'm yaelin hough :)"
 const NAV_LINKS = ["about", "experience", "projects", "skills"]
 
+const SKILLS = [
+  {
+    category: "Languages",
+    items: [
+      { name: "Java",       img: "/java_logo.png" },
+      { name: "OCaml",      img: "/ocaml_logo.png" },
+      { name: "C#",         img: "/c_sharp_logo.png" },
+      { name: "TypeScript", icon: "devicon-typescript-original colored" },
+      { name: "JavaScript", img: "/javascript_logo.png" },
+      { name: "Python",     img: "/python_logo.png" },
+      { name: "Swift",      img: "/swift_logo.png" },
+    ]
+  },
+  {
+    category: "Frameworks",
+    items: [
+      { name: "Unity",     img: "/unity_logo.png" },
+      { name: "React",     icon: "devicon-react-original colored" },
+      { name: "SwiftUI",   img: "/swiftui_logo.png" },
+      { name: "Node.js",   img: "/node_js.png" },
+      { name: "Bootstrap", img: "/bootstrap_logo.png" },
+    ]
+  },
+  {
+    category: "Tools",
+    items: [
+      { name: "Firebase", img: "/firebase_logo.png" },
+      { name: "Git",      img: "/git_logo.png" },
+      { name: "HTML",     img: "/html_logo.png" },
+      { name: "CSS",      img: "/css_logo.png" },
+      { name: "Figma",    img: "/figma_logo.png" },
+    ]
+  }
+]
+
 const PROJECTS = [
   {
     title: "NightLight",
@@ -214,6 +249,24 @@ function App() {
 
       <section id="skills" className="skills-section">
         <h2 className="skills-title">Skills</h2>
+        <div className="skills-categories">
+          {SKILLS.map(group => (
+            <div key={group.category} className="skills-category">
+              <h3 className="skills-category-title">{group.category}</h3>
+              <div className="skills-grid">
+                {group.items.map(skill => (
+                  <div key={skill.name} className="skill-item">
+                    {skill.img
+                      ? <img src={skill.img} className="skill-icon-img" alt={skill.name} />
+                      : <i className={`${skill.icon} skill-icon`} />
+                    }
+                    <span className="skill-name">{skill.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
     </div>
   );
