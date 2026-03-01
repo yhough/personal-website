@@ -1,0 +1,110 @@
+/* ===== CSS Variables ===== */
+:root {
+  /* Tab colors (from App.tsx folders) */
+  --color-about: #ff8daa;
+  --color-experience: #fdaeae;
+  --color-projects: #f6e2b3;
+  --color-skills: #b49982;
+  --color-contact: #7e6651;
+
+  /* Transitions */
+  --transition-base: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== Folder Stack Container ===== */
+.folder-stack {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  height: 100%;
+  width: 100%;
+  gap: 0;
+}
+
+/* ===== Individual Tabs ===== */
+.folder-tab {
+  flex: 1;
+  min-width: 140px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: flex var(--transition-base), box-shadow var(--transition-base);
+}
+
+.folder-tab.expanded {
+  flex: 3;
+  min-width: 280px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.folder-tab[data-tab="about"] {
+  background: var(--color-about);
+}
+
+.folder-tab[data-tab="experience"] {
+  background: var(--color-experience);
+}
+
+.folder-tab[data-tab="projects"] {
+  background: var(--color-projects);
+}
+
+.folder-tab[data-tab="skills"] {
+  background: var(--color-skills);
+}
+
+.folder-tab[data-tab="contact"] {
+  background: var(--color-contact);
+}
+
+/* ===== Top Label Tab ===== */
+.folder-tab-label {
+  position: absolute;
+  top: -32px;
+  left: 24px;
+  padding: 10px 24px;
+  border-radius: 8px 8px 0 0;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "MuseoModerno", sans-serif;
+  color: #333;
+  transition: background var(--transition-base);
+}
+
+.folder-tab[data-tab="about"] .folder-tab-label {
+  background: var(--color-about);
+}
+
+.folder-tab[data-tab="experience"] .folder-tab-label {
+  background: var(--color-experience);
+}
+
+.folder-tab[data-tab="projects"] .folder-tab-label {
+  background: var(--color-projects);
+}
+
+.folder-tab[data-tab="skills"] .folder-tab-label {
+  background: var(--color-skills);
+}
+
+.folder-tab[data-tab="contact"] .folder-tab-label {
+  background: var(--color-contact);
+}
+
+/* ===== Content Inside Tab ===== */
+.folder-tab-content {
+  padding: 48px;
+  font-size: 1.1rem;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.folder-tab-content h2 {
+  font-size: 1.75rem;
+  margin: 0 0 1rem;
+}
+
+.folder-tab.expanded .folder-tab-content {
+  opacity: 1;
+}

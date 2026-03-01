@@ -11,11 +11,9 @@ function App() {
     { id: "contact", color: "#7e6651" }
   ];
   return (
-    <div style={{ padding: "80px", width: "100%", boxSizing: "border-box" }}>
-      <h1 style={{ textAlign: "center", marginBottom: "50px" }}>
-        hi! i'm yaelin hough :)
-      </h1>
-      <div style={{ width: "100%", marginTop: "20px" }}>
+    <div className="app-layout">
+      <h1 className="app-title">hi! i'm yaelin hough :)</h1>
+      <div className="app-folders">
         <FolderStack folders={folders} />
       </div>
     </div>
