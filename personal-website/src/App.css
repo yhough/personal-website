@@ -321,16 +321,18 @@ a.project-card-title:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 0.35rem;
-  background: rgba(255, 255, 255, 0.12);
+  background: #ffffff;
   border-radius: 10px;
-  padding: 0.7rem 0.85rem;
+  width: 4.5rem;
+  height: 4.5rem;
   transition: background 0.2s ease, transform 0.2s ease;
   flex-shrink: 0;
 }
 
 .skill-item:hover {
-  background: rgba(255, 255, 255, 0.22);
+  background: #f0f0f0;
   transform: translateY(-3px);
 }
 
@@ -351,7 +353,7 @@ a.project-card-title:hover {
 
 .skill-name {
   font-size: 0.72rem;
-  color: #F4F0E4;
+  color: #1a1a1a;
   text-align: center;
   white-space: nowrap;
 }
