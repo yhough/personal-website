@@ -4,6 +4,40 @@ import './App.css'
 const TITLE = "hi! i'm yaelin hough :)"
 const NAV_LINKS = ["about", "experience", "projects", "skills"]
 
+const PROJECTS = [
+  {
+    title: "NightLight",
+    link: null,
+    date: "Mar 2026",
+    subtitle: "Safety iOS App",
+    status: "In Progress",
+    description: "Developing an iOS app that acts as a behavioral and safety layer for nights out.",
+    tech: [{ label: "Building with", stack: "Swift, SwiftUI" }]
+  },
+  {
+    title: "InstaCal",
+    link: "https://github.com/GabrielCastilloH/InstaCal",
+    date: "Feb 2026",
+    subtitle: "AI-Powered Google Calendar Extension",
+    status: null,
+    description: "Built a production-ready Chrome extension that converts natural language into structured Google Calendar events. Developed a secure server-side LLM pipeline to prevent client-side API exposure, implemented OAuth 2.0 authentication, and integrated the Google Calendar REST API to create a seamless end-to-end event creation workflow.",
+    tech: [
+      { label: "Frontend", stack: "React + TypeScript" },
+      { label: "Build Tool", stack: "Vite" },
+      { label: "Backend", stack: "Firebase Cloud Functions" }
+    ]
+  },
+  {
+    title: "CamlChess",
+    link: "https://github.com/ethanzhang145/ocamlchess",
+    date: "Dec 2025",
+    subtitle: "Fully Playable Chess Engine",
+    status: null,
+    description: "Collaborated in a 3-person team to design and implement a 1,700+ line chess application from the ground up. Engineered a complete rules engine supporting legal move generation, castling, en passant, promotion, check/checkmate detection, and game termination logic, paired with an interactive graphical interface.",
+    tech: [{ label: "Built with", stack: "OCaml, Bogue" }]
+  }
+]
+
 const EXPERIENCES = [
   {
     org: "Cornell WebDev",
@@ -117,6 +151,36 @@ function App() {
               <div className="experience-card-skills">
                 {exp.skills.map(skill => (
                   <span key={skill} className="experience-card-skill">{skill}</span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="projects" className="projects-section">
+        <h2 className="projects-title">Projects</h2>
+        <div className="projects-scroll">
+          {PROJECTS.map((proj) => (
+            <div key={proj.title} className="project-card">
+              <div className="project-card-top">
+                <div className="project-card-header">
+                  {proj.link
+                    ? <a href={proj.link} target="_blank" rel="noreferrer" className="project-card-title">{proj.title}</a>
+                    : <span className="project-card-title">{proj.title}</span>
+                  }
+                  {proj.status && <span className="project-card-status">{proj.status}</span>}
+                </div>
+                <div className="project-card-date">{proj.date}</div>
+                <div className="project-card-subtitle">{proj.subtitle}</div>
+              </div>
+              <p className="project-card-desc">{proj.description}</p>
+              <div className="project-card-tech">
+                {proj.tech.map(t => (
+                  <div key={t.label} className="project-card-tech-row">
+                    <span className="project-card-tech-label">{t.label}:</span>
+                    <span className="project-card-tech-stack">{t.stack}</span>
+                  </div>
                 ))}
               </div>
             </div>
