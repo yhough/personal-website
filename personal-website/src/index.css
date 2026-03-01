@@ -1,8 +1,8 @@
 :root {
-  font-family: "MuseoModerno", sans-serif;
+  font-family: monospace;
   line-height: 1.5;
   font-weight: 400;
-  color: #333;
+  color: #efefef;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -23,7 +23,7 @@ html, body {
   padding: 0;
   height: 100vh;
   overflow: hidden;
-  background-color: #f0efeb;
+  background-color: #111111;
 }
 
 body {
@@ -31,7 +31,6 @@ body {
 }
 
 h1 {
-  font-family: "MuseoModerno", sans-serif;
   font-size: 3.2em;
   line-height: 1.1;
 }

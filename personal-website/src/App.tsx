@@ -1,8 +1,26 @@
+import { useState, useEffect } from 'react'
 import FolderStack from './components/FolderStack'
 import './App.css'
 
+const TITLE = "hi! i'm yaelin hough :)"
 
 function App() {
+  const [displayed, setDisplayed] = useState('')
+  const [done, setDone] = useState(false)
+
+  useEffect(() => {
+    let i = 0
+    const interval = setInterval(() => {
+      i++
+      setDisplayed(TITLE.slice(0, i))
+      if (i >= TITLE.length) {
+        clearInterval(interval)
+        setDone(true)
+      }
+    }, 75)
+    return () => clearInterval(interval)
+  }, [])
+
   const folders = [
     { id: "about", color: "#ff8daa" },
     { id: "experience", color: "#fdaeae" },
@@ -12,7 +30,10 @@ function App() {
   ];
   return (
     <div className="app-layout">
-      <h1 className="app-title">hi! i'm yaelin hough :)</h1>
+      <h1 className="app-title">
+        {displayed}
+        {!done && <span className="cursor">|</span>}
+      </h1>
       <div className="app-folders">
         <FolderStack folders={folders} />
       </div>

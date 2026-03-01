@@ -15,7 +15,7 @@
 .folder-stack {
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: stretch;
   height: 100%;
   width: 100%;
   gap: 0;
@@ -27,9 +27,17 @@
   min-width: 140px;
   position: relative;
   overflow: hidden;
-  border-radius: 12px 12px 0 0;
+  border-radius: 0;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   transition: flex var(--transition-base), box-shadow var(--transition-base);
+}
+
+.folder-tab:first-child {
+  border-radius: 12px 0 0 12px;
+}
+
+.folder-tab:last-child {
+  border-radius: 0 12px 12px 0;
 }
 
 .folder-tab.expanded {
@@ -67,7 +75,6 @@
   border-radius: 8px 8px 0 0;
   font-size: 18px;
   font-weight: 600;
-  font-family: "MuseoModerno", sans-serif;
   color: #333;
   transition: background var(--transition-base);
 }
