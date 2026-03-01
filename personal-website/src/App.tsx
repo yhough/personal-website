@@ -10,21 +10,24 @@ const EXPERIENCES = [
     period: "Oct. 2025 – Present",
     role: "Frontend Developer",
     logo: "/webdev_logo.png",
-    description: "Designing and developing custom websites for Cornell organizations. Creating responsive UI mockups in Figma and implementing accessible, maintainable frontend components using HTML, CSS, and JavaScript."
+    description: "Designing and developing custom websites for Cornell organizations. Creating responsive UI mockups in Figma and implementing accessible, maintainable frontend components using HTML, CSS, and JavaScript.",
+    skills: ["HTML", "CSS", "JavaScript", "Responsive Design", "Figma", "Accessibility (WCAG)", "UI/UX", "Frontend Architecture", "Node"]
   },
   {
     org: "Cornell XR",
     period: "Sept. 2025 – Present",
     role: "VR Collaboration Systems (Unity / C#)",
     logo: "/CUXR_logo.png",
-    description: "Develop multi-user VR features for architectural model review, including annotations, lighting controls, scaling tools, and real-time communication systems. Currently building custom Unity environments to integrate with an external olfactory device, expanding immersion beyond visual and spatial interaction. Across all features, we prioritize accessibility, usability, and inclusive design to ensure collaborative XR tools are intuitive and widely usable."
+    description: "Develop multi-user VR features for architectural model review, including annotations, lighting controls, scaling tools, and real-time communication systems. Currently building custom Unity environments to integrate with an external olfactory device, expanding immersion beyond visual and spatial interaction. Across all features, we prioritize accessibility, usability, and inclusive design to ensure collaborative XR tools are intuitive and widely usable.",
+    skills: ["Unity", "C#", "XR Interaction Toolkit", "VR UI/UX Design", "Accessibility Design"]
   },
   {
     org: "Fendodo",
     period: "June 2024 – Oct. 2025",
     role: "Private Tutor (SAT, SSAT, AP Literature)",
     logo: "/fendodo_logo.svg",
-    description: "Provided individualized instruction in standardized test preparation and AP English Literature, focusing on analytical writing, reading comprehension, and test strategy. Helped students build confidence, structure arguments clearly, and improve measurable score outcomes."
+    description: "Provided individualized instruction in standardized test preparation and AP English Literature, focusing on analytical writing, reading comprehension, and test strategy. Helped students build confidence, structure arguments clearly, and improve measurable score outcomes.",
+    skills: ["Curriculum Design", "Communication", "Critical Thinking", "Standardized Test Strategy", "Mentorship"]
   }
 ]
 
@@ -111,6 +114,11 @@ function App() {
               </div>
               <div className="experience-card-role">{exp.role}</div>
               <p className="experience-card-desc">{exp.description}</p>
+              <div className="experience-card-skills">
+                {exp.skills.map(skill => (
+                  <span key={skill} className="experience-card-skill">{skill}</span>
+                ))}
+              </div>
             </div>
           ))}
         </div>
