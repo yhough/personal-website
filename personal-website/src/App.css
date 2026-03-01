@@ -195,7 +195,7 @@
   text-decoration: none;
 }
 
-.project-card-title:hover {
+a.project-card-title:hover {
   color: #44A194;
   text-decoration: underline;
 }
@@ -273,6 +273,25 @@
 .project-card-tech-stack {
   color: #333;
   font-weight: 600;
+}
+
+.skills-section {
+  min-height: 100vh;
+  background-color: #537D96;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem;
+  gap: 3rem;
+  box-sizing: border-box;
+}
+
+.skills-title {
+  font-family: 'Gagalin', sans-serif;
+  font-size: 3rem;
+  color: #F4F0E4;
+  margin: -1.5rem 0 0;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .scroll-arrow-container {

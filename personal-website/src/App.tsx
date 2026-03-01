@@ -211,6 +211,10 @@ function App() {
           ))}
         </div>
       </section>
+
+      <section id="skills" className="skills-section">
+        <h2 className="skills-title">Skills</h2>
+      </section>
     </div>
   );
 }
