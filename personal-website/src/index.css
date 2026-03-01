@@ -9,7 +9,7 @@
   font-family: 'Gagalin', sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color: #efefef;
+  color: #2a2a2a;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -28,9 +28,7 @@ a:hover {
 html, body {
   margin: 0;
   padding: 0;
-  height: 100vh;
-  overflow: hidden;
-  background-color: #111111;
+  background-color: #F4F0E4;
 }
 
 body {

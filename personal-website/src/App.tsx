@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import FolderStack from './components/FolderStack'
 import './App.css'
 
 const TITLE = "hi! i'm yaelin hough :)"
+const NAV_LINKS = ["about", "experience", "projects", "contact"]
 
 function App() {
   const [displayed, setDisplayed] = useState('')
@@ -16,25 +16,18 @@ function App() {
     return () => clearInterval(interval)
   }, [])
 
-  const folders = [
-    { id: "about", color: "#ff8daa" },
-    { id: "experience", color: "#fdaeae" },
-    { id: "projects", color: "#f6e2b3" },
-    { id: "skills", color: "#b49982" },
-    { id: "contact", color: "#7e6651" }
-  ];
   return (
     <div className="app-layout">
       <nav className="app-nav">
-        {folders.map(f => (
-          <a key={f.id} className="app-nav-link" href={`#${f.id}`}>{f.id}</a>
+        {NAV_LINKS.map(link => (
+          <a key={link} className="app-nav-link" href={`#${link}`}>{link}</a>
         ))}
       </nav>
       <h1 className="app-title">
         {displayed}
       </h1>
-      <div className="app-folders">
-        <FolderStack folders={folders} />
+      <div className="app-hero-wrapper">
+        <img src="/calvin4.png" className="app-hero-image" alt="Calvin and Hobbes comic" />
       </div>
     </div>
   );

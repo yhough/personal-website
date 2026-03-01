@@ -1,56 +1,66 @@
 #root {
   width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  height: 100vh;
-  overflow: hidden;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  padding: 0 2rem;
 }
 
 .app-layout {
   display: flex;
   flex-direction: column;
-  flex: 1;
-  min-height: 0;
-  overflow: hidden;
+}
+
+.app-hero-wrapper {
+  position: relative;
+  display: block;
+  margin: 0 auto 3rem;
+  max-width: 1000px;
+  width: 95%;
+  border: 7px solid #000000;
+}
+
+.app-hero-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #F4F0E4;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.app-hero-image {
+  display: block;
+  width: 100%;
 }
 
 .app-title {
   flex-shrink: 0;
   text-align: center;
-  margin: 0;
-  padding: 5rem 2rem 4rem;
-  font-size: 2.5rem;
+  margin: 0 auto;
+  padding: 2rem 2rem 4rem;
+  font-size: 5rem;
+  width: 100%;
+  max-width: 900px;
+  box-sizing: border-box;
 }
 
 .app-nav {
   flex-shrink: 0;
   display: flex;
   flex-direction: row;
-  gap: 2.5rem;
+  justify-content: space-evenly;
   padding: 0.85rem 2.5rem;
-  background: #f6e2b3;
+  background: #44A194;
 }
 
 .app-nav-link {
-  color: #333;
+  color: #F4F0E4;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.4rem;
 }
 
 .app-nav-link:hover {
-  color: #111;
   text-decoration: underline;
 }
 
-
-.app-folders {
-  flex: 1;
-  min-height: 0;
-  overflow: hidden;
-  padding-bottom: 2rem;
-}
