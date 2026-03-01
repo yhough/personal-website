@@ -1,5 +1,12 @@
+@font-face {
+  font-family: 'Gagalin';
+  src: url('/Gagalin-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
-  font-family: monospace;
+  font-family: 'Gagalin', sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color: #efefef;

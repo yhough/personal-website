@@ -6,17 +6,12 @@ const TITLE = "hi! i'm yaelin hough :)"
 
 function App() {
   const [displayed, setDisplayed] = useState('')
-  const [done, setDone] = useState(false)
-
   useEffect(() => {
     let i = 0
     const interval = setInterval(() => {
       i++
       setDisplayed(TITLE.slice(0, i))
-      if (i >= TITLE.length) {
-        clearInterval(interval)
-        setDone(true)
-      }
+      if (i >= TITLE.length) clearInterval(interval)
     }, 75)
     return () => clearInterval(interval)
   }, [])
@@ -30,9 +25,13 @@ function App() {
   ];
   return (
     <div className="app-layout">
+      <nav className="app-nav">
+        {folders.map(f => (
+          <a key={f.id} className="app-nav-link" href={`#${f.id}`}>{f.id}</a>
+        ))}
+      </nav>
       <h1 className="app-title">
         {displayed}
-        {!done && <span className="cursor">|</span>}
       </h1>
       <div className="app-folders">
         <FolderStack folders={folders} />
