@@ -282,6 +282,10 @@ function App() {
           ))}
         </div>
       </section>
+      <footer className="app-footer">
+        <p>૮･ﻌ･ა</p>
+        <p>© 2026 Yaelin Hough</p>
+      </footer>
     </div>
   );
 }

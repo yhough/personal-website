@@ -560,6 +560,19 @@ a.project-card-title:hover {
   50% { transform: rotate(45deg) translateY(7px); }
 }
 
+.app-footer {
+  background-color: #F4F0E4;
+  text-align: center;
+  padding: 1.5rem 2rem;
+  font-size: 0.9rem;
+  color: #888;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.app-footer p {
+  margin: 0;
+}
+
 /* ===== Hamburger Button ===== */
 .app-nav-hamburger {
   display: none;
@@ -618,9 +631,13 @@ a.project-card-title:hover {
   }
 
   /* Home */
+  .home-section {
+    justify-content: center;
+  }
+
   .app-title {
     font-size: 2.4rem;
-    padding: 2rem 1.25rem 0.75rem;
+    padding: 1rem 1.25rem 0.75rem;
   }
 
   .app-subtitle {
