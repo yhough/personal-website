@@ -136,7 +136,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4rem;
+  padding: 4rem 2rem;
   gap: 3rem;
   box-sizing: border-box;
 }
@@ -159,11 +159,11 @@
 }
 
 .about-text {
-  max-width: 600px;
+  max-width: 680px;
   color: #1a1a1a;
   text-align: left;
   font-family: 'Patrick Hand', cursive;
-  margin-top: -2rem;
+  margin-top: 0.5rem;
 }
 
 .about-text p {

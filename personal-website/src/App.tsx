@@ -16,9 +16,9 @@ const EXPERIENCES = [
   {
     org: "Cornell XR",
     period: "Sept. 2025 – Present",
-    role: "VR Collaboration Systems (Unity / C#)",
+    role: "Software Subteam Member",
     logo: "/CUXR_logo.png",
-    description: "Develop multi-user VR features for architectural model review, including annotations, lighting controls, scaling tools, and real-time communication systems. Currently building custom Unity environments to integrate with an external olfactory device, expanding immersion beyond visual and spatial interaction. Across all features, we prioritize accessibility, usability, and inclusive design to ensure collaborative XR tools are intuitive and widely usable.",
+    description: "Developed multi-user VR features for architectural model review, including annotations, lighting controls, scaling tools, and real-time communication systems. Currently building custom Unity environments to integrate with an external olfactory device, expanding immersion beyond visual and spatial interaction. Across all features, we prioritize accessibility, usability, and inclusive design to ensure collaborative XR tools are intuitive and widely usable.",
     skills: ["Unity", "C#", "XR Interaction Toolkit", "VR UI/UX Design", "Accessibility Design"]
   },
   {
@@ -101,7 +101,7 @@ function App() {
       </section>
 
       <section id="experience" className="experience-section">
-        <h2 className="experience-title">Experiences</h2>
+        <h2 className="experience-title">Experience</h2>
         <div className="experience-cards">
           {EXPERIENCES.map((exp) => (
             <div key={exp.org} className="experience-card">
