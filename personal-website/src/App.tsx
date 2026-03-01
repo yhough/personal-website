@@ -59,7 +59,18 @@ function App() {
       </div>
 
       <section id="about" className="about-section">
-        <h2>about</h2>
+        <h2 className="about-title">About Me</h2>
+        <div className="about-content">
+          <div className="about-headshot-wrapper">
+            <img src="/headshot.png" className="about-headshot" alt="Yaelin Hough" />
+          </div>
+          <div className="about-text">
+            <p>Hello! I'm Yaelin, a Computer Science and Philosophy double major at Cornell University.</p>
+            <p>I love to create — whether that's building products that help people or writing stories and songs.
+              I love to learn new technologies, working across full-stack web, AI-powered tools, IOS apps, and VR systems. I'm especially interested in intelligent systems and human-centered design, always trying to emphasize clean architecture, user experience, and real-world impact in everything I build.</p>
+            <p>When I'm not coding, I'm probably playing the guitar with my band, writing, or listening to music.</p>
+          </div>
+        </div>
       </section>
     </div>
   );
