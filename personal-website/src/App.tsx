@@ -25,7 +25,8 @@ const PROJECTS = [
       { label: "Frontend", stack: "React + TypeScript" },
       { label: "Build Tool", stack: "Vite" },
       { label: "Backend", stack: "Firebase Cloud Functions" }
-    ]
+    ],
+    image: "/instacal_screenshot.png"
   },
   {
     title: "CamlChess",
@@ -34,7 +35,17 @@ const PROJECTS = [
     subtitle: "Fully Playable Chess Engine",
     status: null,
     description: "Collaborated in a 3-person team to design and implement a 1,700+ line chess application from the ground up. Engineered a complete rules engine supporting legal move generation, castling, en passant, promotion, check/checkmate detection, and game termination logic, paired with an interactive graphical interface.",
-    tech: [{ label: "Built with", stack: "OCaml, Bogue" }]
+    tech: [{ label: "Built with", stack: "OCaml, Bogue" }],
+    video: "https://www.youtube.com/embed/DCS8vwwjEFo"
+  },
+  {
+    title: "Architectural Model Reviewer",
+    link: null,
+    date: "Sept 2025 – Dec 2025",
+    subtitle: "Multi-User VR Collaboration Tool",
+    status: null,
+    description: "Collaborated on a multi-user VR application that enables architects, designers, and clients to collaboratively review architectural models in real time. Features include live annotation tools (drawing + typed notes), voice communication, laser pointer tracking, adjustable model scaling/zoom, a mini-map for spatial awareness, and dynamic lighting controls for day/night simulation.",
+    tech: [{ label: "Built with", stack: "Unity, C#, XR Interaction Toolkit" }]
   }
 ]
 
@@ -162,7 +173,7 @@ function App() {
         <h2 className="projects-title">Projects</h2>
         <div className="projects-scroll">
           {PROJECTS.map((proj) => (
-            <div key={proj.title} className="project-card">
+            <div key={proj.title} className={`project-card${proj.video || proj.image ? ' project-card--wide' : ''}`}>
               <div className="project-card-top">
                 <div className="project-card-header">
                   {proj.link
@@ -175,6 +186,19 @@ function App() {
                 <div className="project-card-subtitle">{proj.subtitle}</div>
               </div>
               <p className="project-card-desc">{proj.description}</p>
+              {proj.image && (
+                <img src={proj.image} className="project-card-image" alt={`${proj.title} screenshot`} />
+              )}
+              {proj.video && (
+                <div className="project-card-video">
+                  <iframe
+                    src={proj.video}
+                    title={`${proj.title} demo`}
+                    allowFullScreen
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  />
+                </div>
+              )}
               <div className="project-card-tech">
                 {proj.tech.map(t => (
                   <div key={t.label} className="project-card-tech-row">
