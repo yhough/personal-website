@@ -47,12 +47,22 @@
 }
 
 .app-nav {
-  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.85rem 2rem;
   background: #44A194;
+}
+
+.home-section {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .app-nav-links {
@@ -98,11 +108,12 @@
 .app-subtitle {
   text-align: center;
   margin: 0.5rem auto 3rem;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   color: #2a2a2a;
   width: 100%;
   max-width: 900px;
   box-sizing: border-box;
+  text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.12);
 }
 
 .scroll-arrow-container {
@@ -110,6 +121,29 @@
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
+  transition: opacity 0.4s ease;
+}
+
+.scroll-arrow-container.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.about-section {
+  min-height: 100vh;
+  background-color: #EC8F8D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  box-sizing: border-box;
+}
+
+.about-section h2 {
+  font-size: 3rem;
+  color: #F4F0E4;
+  text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.15);
+  margin: 0;
 }
 
 .scroll-arrow {

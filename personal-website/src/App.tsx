@@ -6,6 +6,8 @@ const NAV_LINKS = ["about", "experience", "projects", "skills"]
 
 function App() {
   const [displayed, setDisplayed] = useState('')
+  const [showArrow, setShowArrow] = useState(true)
+
   useEffect(() => {
     let i = 0
     const interval = setInterval(() => {
@@ -14,6 +16,12 @@ function App() {
       if (i >= TITLE.length) clearInterval(interval)
     }, 75)
     return () => clearInterval(interval)
+  }, [])
+
+  useEffect(() => {
+    const handleScroll = () => setShowArrow(window.scrollY < 50)
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   return (
@@ -36,16 +44,23 @@ function App() {
           ))}
         </div>
       </nav>
-      <h1 className="app-title">
-        {displayed}
-      </h1>
-      <p className="app-subtitle">CS & Philosophy Major @ Cornell</p>
-      <div className="app-hero-wrapper">
-        <img src="/calvin4.png" className="app-hero-image" alt="Calvin and Hobbes comic" />
-      </div>
-      <div className="scroll-arrow-container">
+      <section className="home-section">
+        <h1 className="app-title">
+          {displayed}
+        </h1>
+        <p className="app-subtitle">CS & Philosophy Major @ Cornell</p>
+        <div className="app-hero-wrapper">
+          <img src="/calvin4.png" className="app-hero-image" alt="Calvin and Hobbes comic" />
+        </div>
+      </section>
+
+      <div className={`scroll-arrow-container${showArrow ? '' : ' hidden'}`}>
         <div className="scroll-arrow" />
       </div>
+
+      <section id="about" className="about-section">
+        <h2>about</h2>
+      </section>
     </div>
   );
 }
