@@ -4,6 +4,30 @@ import './App.css'
 const TITLE = "hi! i'm yaelin hough :)"
 const NAV_LINKS = ["about", "experience", "projects", "skills"]
 
+const EXPERIENCES = [
+  {
+    org: "Cornell WebDev",
+    period: "Oct. 2025 – Present",
+    role: "Frontend Developer",
+    logo: "/webdev_logo.png",
+    description: "Designing and developing custom websites for Cornell organizations. Creating responsive UI mockups in Figma and implementing accessible, maintainable frontend components using HTML, CSS, and JavaScript."
+  },
+  {
+    org: "Cornell XR",
+    period: "Sept. 2025 – Present",
+    role: "VR Collaboration Systems (Unity / C#)",
+    logo: "/CUXR_logo.png",
+    description: "Develop multi-user VR features for architectural model review, including annotations, lighting controls, scaling tools, and real-time communication systems. Currently building custom Unity environments to integrate with an external olfactory device, expanding immersion beyond visual and spatial interaction. Across all features, we prioritize accessibility, usability, and inclusive design to ensure collaborative XR tools are intuitive and widely usable."
+  },
+  {
+    org: "Fendodo",
+    period: "June 2024 – Oct. 2025",
+    role: "Private Tutor (SAT, SSAT, AP Literature)",
+    logo: "/fendodo_logo.svg",
+    description: "Provided individualized instruction in standardized test preparation and AP English Literature, focusing on analytical writing, reading comprehension, and test strategy. Helped students build confidence, structure arguments clearly, and improve measurable score outcomes."
+  }
+]
+
 function App() {
   const [displayed, setDisplayed] = useState('')
   const [showArrow, setShowArrow] = useState(true)
@@ -70,6 +94,25 @@ function App() {
               I love to learn new technologies, working across full-stack web, AI-powered tools, IOS apps, and VR systems. I'm especially interested in intelligent systems and human-centered design, always trying to emphasize clean architecture, user experience, and real-world impact in everything I build.</p>
             <p>When I'm not coding, I'm probably playing the guitar with my band, writing, or listening to music.</p>
           </div>
+        </div>
+      </section>
+
+      <section id="experience" className="experience-section">
+        <h2 className="experience-title">Experiences</h2>
+        <div className="experience-cards">
+          {EXPERIENCES.map((exp) => (
+            <div key={exp.org} className="experience-card">
+              <div className="experience-card-header">
+                <div className="experience-card-header-left">
+                  <img src={exp.logo} className="experience-card-logo" alt={`${exp.org} logo`} />
+                  <span className="experience-card-org">{exp.org}</span>
+                </div>
+                <span className="experience-card-period">{exp.period}</span>
+              </div>
+              <div className="experience-card-role">{exp.role}</div>
+              <p className="experience-card-desc">{exp.description}</p>
+            </div>
+          ))}
         </div>
       </section>
     </div>
