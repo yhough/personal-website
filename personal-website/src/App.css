@@ -145,11 +145,21 @@
   overflow-x: auto;
   width: 100%;
   padding-bottom: 1rem;
-  scrollbar-width: none;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(244, 240, 228, 0.6) transparent;
 }
 
 .projects-scroll::-webkit-scrollbar {
-  display: none;
+  height: 6px;
+}
+
+.projects-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.projects-scroll::-webkit-scrollbar-thumb {
+  background: rgba(244, 240, 228, 0.6);
+  border-radius: 999px;
 }
 
 .project-card {
