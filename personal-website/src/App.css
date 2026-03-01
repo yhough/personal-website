@@ -559,3 +559,153 @@ a.project-card-title:hover {
   0%, 100% { transform: rotate(45deg) translateY(0); }
   50% { transform: rotate(45deg) translateY(7px); }
 }
+
+/* ===== Hamburger Button ===== */
+.app-nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.app-nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: #F4F0E4;
+  border-radius: 2px;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+
+  /* Nav */
+  .app-nav {
+    position: relative;
+    flex-wrap: wrap;
+    padding: 0.75rem 1.25rem;
+  }
+
+  .app-nav-hamburger {
+    display: flex;
+  }
+
+  .app-nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem 0 0.75rem;
+  }
+
+  .app-nav-links.open {
+    display: flex;
+  }
+
+  .app-nav-link {
+    font-size: 1.2rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(244, 240, 228, 0.15);
+  }
+
+  .app-nav-icons {
+    padding-right: 0;
+    border-right: none;
+  }
+
+  /* Home */
+  .app-title {
+    font-size: 2.4rem;
+    padding: 2rem 1.25rem 0.75rem;
+  }
+
+  .app-subtitle {
+    font-size: 1.1rem;
+    margin: 0.25rem auto 1.5rem;
+    padding: 0 1.25rem;
+  }
+
+  .app-hero-wrapper {
+    width: 95%;
+    margin-bottom: 2rem;
+  }
+
+  /* About */
+  .about-section {
+    padding: 3rem 1.25rem;
+    gap: 1.5rem;
+  }
+
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .about-headshot-wrapper {
+    height: 55vw;
+    width: 55vw;
+    margin-top: 0;
+  }
+
+  .about-text {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+  }
+
+  /* Experience */
+  .experience-section {
+    padding: 3rem 1.25rem;
+  }
+
+  .experience-card {
+    padding: 1.25rem 1.25rem;
+  }
+
+  .experience-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  /* Projects */
+  .projects-section {
+    padding: 3rem 1.25rem;
+  }
+
+  .project-card,
+  .project-card--wide {
+    min-width: 80vw;
+    max-width: 80vw;
+  }
+
+  /* Skills */
+  .skills-section {
+    padding: 3rem 1.25rem;
+  }
+
+  .skills-categories {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .skill-item {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+
+  .skill-icon,
+  .skill-icon-img {
+    font-size: 2.8rem;
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+}
