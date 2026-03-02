@@ -1,5 +1,6 @@
+'use client'
+
 import { useState, useEffect, useRef } from 'react'
-import './App.css'
 
 type SkillItem = { name: string; icon?: string; img?: string }
 
