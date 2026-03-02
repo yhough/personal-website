@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './App.css'
 
 type SkillItem = { name: string; icon?: string; img?: string }
@@ -118,6 +118,24 @@ function App() {
   const [displayed, setDisplayed] = useState('')
   const [showArrow, setShowArrow] = useState(true)
   const [menuOpen, setMenuOpen] = useState(false)
+  const projectsScrollRef = useRef<HTMLDivElement>(null)
+  const [projectsScrolled, setProjectsScrolled] = useState(false)
+  const [projectsAtEnd, setProjectsAtEnd] = useState(false)
+
+  const scrollProjects = (dir: 'left' | 'right') => {
+    projectsScrollRef.current?.scrollBy({ left: dir === 'right' ? 380 : -380, behavior: 'smooth' })
+  }
+
+  useEffect(() => {
+    const el = projectsScrollRef.current
+    if (!el) return
+    const handleScroll = () => {
+      setProjectsScrolled(el.scrollLeft > 10)
+      setProjectsAtEnd(el.scrollLeft + el.clientWidth >= el.scrollWidth - 10)
+    }
+    el.addEventListener('scroll', handleScroll)
+    return () => el.removeEventListener('scroll', handleScroll)
+  }, [])
 
   useEffect(() => {
     let i = 0
@@ -220,7 +238,8 @@ function App() {
 
       <section id="projects" className="projects-section">
         <h2 className="projects-title">Projects</h2>
-        <div className="projects-scroll">
+        <div className="projects-scroll-wrapper">
+        <div className="projects-scroll" ref={projectsScrollRef}>
           {PROJECTS.map((proj) => (
             <div key={proj.title} className={`project-card${proj.video || proj.image ? ' project-card--wide' : ''}`}>
               <div className="project-card-top">
@@ -258,6 +277,17 @@ function App() {
               </div>
             </div>
           ))}
+        </div>
+        {projectsScrolled && (
+          <button className="projects-scroll-btn projects-scroll-btn--left" onClick={() => scrollProjects('left')} aria-label="Scroll left">
+            <div className="projects-scroll-chevron projects-scroll-chevron--left" />
+          </button>
+        )}
+        {!projectsAtEnd && (
+          <button className="projects-scroll-btn" onClick={() => scrollProjects('right')} aria-label="Scroll right">
+            <div className="projects-scroll-chevron" />
+          </button>
+        )}
         </div>
       </section>
 

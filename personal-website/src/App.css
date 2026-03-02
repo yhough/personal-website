@@ -138,29 +138,82 @@
   align-self: center;
 }
 
+.projects-scroll-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
 .projects-scroll {
   display: flex;
   flex-direction: row;
   gap: 1.5rem;
-  overflow-x: scroll;
+  overflow-x: auto;
   width: 100%;
   padding-bottom: 1rem;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(244, 240, 228, 0.6) transparent;
+  scrollbar-width: none;
 }
 
 .projects-scroll::-webkit-scrollbar {
-  height: 6px;
+  display: none;
 }
 
-.projects-scroll::-webkit-scrollbar-track {
-  background: rgba(244, 240, 228, 0.2);
-  border-radius: 999px;
+.projects-scroll-btn {
+  position: absolute;
+  right: -1.5rem;
+  top: 50%;
+  transform: translateY(-60%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  flex-shrink: 0;
 }
 
-.projects-scroll::-webkit-scrollbar-thumb {
-  background: rgba(244, 240, 228, 0.8);
-  border-radius: 999px;
+.projects-scroll-btn--left {
+  right: auto;
+  left: -1.5rem;
+}
+
+.projects-scroll-chevron {
+  width: 22px;
+  height: 22px;
+  border-right: 3px solid rgba(244, 240, 228, 0.6);
+  border-bottom: 3px solid rgba(244, 240, 228, 0.6);
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  transform: rotate(-45deg);
+  filter: drop-shadow(1px 2px 4px rgba(0, 0, 0, 0.2));
+  animation: bounce-right 1.6s ease-in-out infinite;
+  transition: border-color 0.2s ease;
+}
+
+.projects-scroll-btn:hover .projects-scroll-chevron {
+  border-color: #F4F0E4;
+}
+
+@keyframes bounce-right {
+  0%, 100% { transform: rotate(-45deg) translateX(0); }
+  50% { transform: rotate(-45deg) translateX(5px); }
+}
+
+.projects-scroll-chevron--left {
+  transform: rotate(135deg);
+  animation: bounce-left 1.6s ease-in-out infinite;
+}
+
+.projects-scroll-btn:hover .projects-scroll-chevron--left {
+  border-color: #F4F0E4;
+}
+
+@keyframes bounce-left {
+  0%, 100% { transform: rotate(135deg) translateX(0); }
+  50% { transform: rotate(135deg) translateX(5px); }
 }
 
 .project-card {
