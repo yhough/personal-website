@@ -64,7 +64,7 @@ const PROJECTS = [
       { label: "Build Tool", stack: "Vite" },
       { label: "Backend", stack: "Firebase Cloud Functions" }
     ],
-    image: "/instacal_screenshot.png"
+    image: "/instacal_screenshot.webp"
   },
   {
     title: "CamlChess",
@@ -92,7 +92,7 @@ const EXPERIENCES = [
     org: "Cornell WebDev",
     period: "Oct. 2025 – Present",
     role: "Frontend Developer",
-    logo: "/logos/webdev_logo.png",
+    logo: "/logos/webdev_logo.webp",
     description: "Designing and developing custom websites for Cornell organizations. Creating responsive UI mockups in Figma and implementing accessible, maintainable frontend components using HTML, CSS, and JavaScript.",
     skills: ["HTML", "CSS", "JavaScript", "Responsive Design", "Figma", "Accessibility (WCAG)", "UI/UX", "Frontend Architecture", "Node"]
   },
@@ -100,7 +100,7 @@ const EXPERIENCES = [
     org: "Cornell XR",
     period: "Sept. 2025 – Present",
     role: "Software Subteam Member",
-    logo: "/logos/CUXR_logo.png",
+    logo: "/logos/CUXR_logo.webp",
     description: "Developed multi-user VR features for architectural model review, including annotations, lighting controls, scaling tools, and real-time communication systems. Currently building custom Unity environments to integrate with an external olfactory device, expanding immersion beyond visual and spatial interaction. Across all features, we prioritize accessibility, usability, and inclusive design to ensure collaborative XR tools are intuitive and widely usable.",
     skills: ["Unity", "C#", "XR Interaction Toolkit", "VR UI/UX Design", "Accessibility Design"]
   },
@@ -189,7 +189,7 @@ function App() {
         </h1>
         <p className="app-subtitle">CS & Philosophy Major @ Cornell</p>
         <div className="app-hero-wrapper">
-          <img src="/calvin4.png" className="app-hero-image" alt="Calvin and Hobbes comic" />
+          <img src="/calvin4.webp" className="app-hero-image" alt="Calvin and Hobbes comic" />
         </div>
       </section>
 
@@ -201,7 +201,7 @@ function App() {
         <h2 className="about-title">About Me</h2>
         <div className="about-content">
           <div className="about-headshot-wrapper">
-            <img src="/headshot.png" className="about-headshot" alt="Yaelin Hough" />
+            <img src="/headshot.webp" className="about-headshot" alt="Yaelin Hough" />
           </div>
           <div className="about-text">
             <p>Hello! I'm Yaelin, a Computer Science and Philosophy double major at Cornell University.</p>
