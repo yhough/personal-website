@@ -154,11 +154,12 @@
 }
 
 .projects-scroll::-webkit-scrollbar-track {
-  background: transparent;
+  background: rgba(244, 240, 228, 0.2);
+  border-radius: 999px;
 }
 
 .projects-scroll::-webkit-scrollbar-thumb {
-  background: rgba(244, 240, 228, 0.6);
+  background: rgba(244, 240, 228, 0.8);
   border-radius: 999px;
 }
 
