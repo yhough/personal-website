@@ -186,7 +186,6 @@ function App() {
       </nav>
       <section className="home-section">
         <h1 className="app-title" aria-label={TITLE}>
-          <span className="visually-hidden">{TITLE}</span>
           <span aria-hidden="true">{displayed}</span>
         </h1>
         <p className="app-subtitle">CS & Philosophy Major @ Cornell</p>
