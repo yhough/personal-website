@@ -90,6 +90,15 @@ const PROJECTS = [
 
 const EXPERIENCES = [
   {
+    org: "The Widget Factory (Idler YC S25)",
+    period: "Mar 2026 – Present",
+    role: "Problem Design Engineer",
+    location: "Remote",
+    logo: "/logos/idler.png",
+    description: "Analyze production code across unfamiliar repositories to design coding problems for AI training datasets. Evaluate task clarity and solvability to ensure problems are answerable using only the provided context. Write technical rationales identifying ambiguous requirements and missing implementation details.",
+    skills: ["Code Analysis", "Technical Writing", "AI Training Data", "Problem Design", "Software Engineering"]
+  },
+  {
     org: "Cornell WebDev",
     period: "Oct. 2025 – Present",
     role: "Frontend Developer",
